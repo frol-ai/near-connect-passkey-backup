@@ -794,12 +794,7 @@ const wallet = {
 
     // Standard borsh SignedDelegateAction (NEP-461) wrapping a single
     // w_execute_signed(msg, proof) FunctionCall on the wallet account.
-    const signedDelegateAction = await buildSignedDelegateAction(
-      getClient(),
-      active.accountId,
-      msg,
-      proof,
-    );
+    const signedDelegateAction = await buildSignedDelegateAction(active.accountId, msg, proof);
     return { signedDelegateActions: [signedDelegateAction] };
   },
 
